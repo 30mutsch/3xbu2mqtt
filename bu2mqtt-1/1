@@ -1,0 +1,33 @@
+name: "Bluetti to MQTT 1"
+slug: "bluetti2mqtt_1"
+description: "Read data from Bluetti power stations via BLE and publish to MQTT (Instance 1)"
+version: "1.0.0"
+arch:
+  - amd64
+  - armv7
+  - aarch64
+startup: services
+boot: auto
+options:
+  mqtt_username: ""
+  mqtt_password: ""
+  mqtt_host: ""
+  mqtt_port: ""
+  mode: mqtt
+  ha_config: normal
+  bt_mac: ""
+  poll_sec: 30
+  scan: false
+  debug: false
+schema:
+  mqtt_username: str?
+  mqtt_password: str?
+  mqtt_host: str?
+  mqtt_port: str?
+  mode: str
+  ha_config: str
+  bt_mac: "str"
+  poll_sec: int
+  scan: bool
+  debug: bool
+image: "ghcr.io/ssmcd/bluetti2mqtt"
